@@ -1,0 +1,620 @@
+/* ------- GENERAL STYLING -------- */
+* {
+  box-sizing: border-box;
+  font-family: Arial, "Lato", sans-serif, Helvetica;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Style the body */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: #f1f1f1;
+}
+
+.container {
+    flex: 1;    /* same as flex-grow: 1; */
+}
+
+.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    z-index: 100; /*the higher the number, the more dominant will the CSS object become compared to its other elements. This ensures, that the topbar is always on the front.*/
+    top: 0;
+    background-color: #001928;
+    border: 0px solid #001928;
+    opacity: 1;
+}
+
+.buttonlnk {
+  border: 0px;
+  padding: 10px 10px;
+  background-color: #317FA5;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.buttonlnk:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #3b96c4;
+}
+
+.centerbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  flex-flow: row wrap;
+  margin: 10px 10px;
+  width: 13%;
+}
+
+.fadebtn {
+  background-color:#8c8c8c;
+}
+
+.fadebtn:hover {
+  background-color: #a6a6a6;
+}
+
+.showbtn {
+  background-color: #2eb82e;
+}
+
+.showbtn:hover {
+  background-color: #47d147;
+}
+
+
+/* ------ NAVIGATION ------- */
+.logo-header {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  margin-left: 0px;
+  margin-top: 0;
+}
+
+.logo {
+    background: transparent url('https://i.imgur.com/1CRy2G5.png') center no-repeat;
+    width: 93.8px;
+    height: 40px;
+    overflow: hidden;
+    text-indent: -9999em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.topbar {
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #001928;
+  box-shadow: 0px 1px 8px 0px #333333;
+  float: left;
+  text-decoration: none;
+}
+
+.topbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topbar a:hover:not(.active) {
+  background-color: #001928;
+  text-decoration: none;
+}
+
+/* Drop-Down Navigation */
+.dropdown li:hover > ul
+{
+/*these 2 styles are very important,
+being the ones which make the drop-down to appear on hover */
+    visibility:visible;
+    opacity:1;
+}
+ 
+.dropdown ul, .dropdown ul li ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+/*the next 2 styles are very important,
+being the ones which make the drop-down to stay hidden */
+    visibility:hidden;
+    opacity:0;
+    position: absolute;
+    z-index: 99999;
+    width:180px;
+    background:#f8f8f8;
+    box-shadow:1px 1px 3px #ccc;
+/* css3 transitions for smooth hover effect */
+    -webkit-transition:opacity 0.2s linear, visibility 0.2s linear;
+    -moz-transition:opacity 0.2s linear, visibility 0.2s linear;
+    -o-transition:opacity 0.2s linear, visibility 0.2s linear;
+    transition:opacity 0.2s linear, visibility 0.2s linear;
+}
+ 
+.dropdown ul {
+    top: 43px;
+    left: 1px;
+}
+ 
+.dropdown li ul {
+    top: 0;
+    left: 181px; /* strong related to width:180px; from above */
+}
+ 
+.dropdown ul li {
+    clear:both;
+    width:100%;
+    border:0 none;
+    border-bottom:1px solid #c9c9c9;
+}
+ 
+.dropdown ul li a {
+    background:none;
+    padding:7px 15px;
+    color:#616161;
+    text-shadow:1px 1px 0px #fff;
+    text-decoration:none;
+    display:inline-block;
+    border:0 none;
+    float:left;
+    clear:both;
+    width:150px;
+}
+
+
+/* -------- BANNER --------- */
+.banner {
+  margin: 0;
+  padding: 150px;
+  text-align: center;
+  background: url(images/banner.jpg) 0 0;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  text-decoration: none;
+}
+
+
+/* --------- MINI-BLOG --------- */
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  -ms-flex: 65%; /* IE10 */
+  flex: 65%;
+  background-color: white;
+  padding: 40px;
+  background-color: #f1f1f1;
+  font-family: Arial;
+}
+
+/* Right column */
+.rightcolumn {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  padding: 40px;
+  background-color: #f1f1f1;
+  font-family: Arial;
+}
+
+/* Blog-Preview images */
+.previewimg {
+  background-color: #aaa;
+  width: 35%;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Background Image for Quotes */
+.quote {
+   width: 100%;
+   height: 200px;
+   padding: 80px;
+   background-image: url('images/ocean-cc.jpg');
+   background-size: cover;
+   opacity: 1;
+   font-family: "Marryweather";
+   text-align: center;
+   color: white;
+   text-shadow: 2px 2px 4px #000000;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Add a card effect for articles */
+.card {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-content {
+  width: 65%;
+  padding: 20px;
+}
+
+/* Recent Posts Sideboard */
+.recents {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin: 10px 10px;
+  width: 13%;
+  font-weight: bold;
+}
+
+
+/* -------- BLOG --------- */
+.column {
+  display: flex;
+  font-family: Arial;
+  margin: 10;
+  padding: 10px;   
+  justify-content: center;
+  flex-flow: column wrap;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.column input[type="text"] {
+  border: 0;
+  background: none;
+  text-align: left;
+  border: 1px solid #CCCCCC;
+  color: black;
+  border-radius: 2px;
+}
+
+#tags {
+  margin: 20px 80px;
+  padding: 20px;
+  text-align: center;
+}
+
+#title {
+  margin: 20px 0px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 3px 0 rgba(0, 0, 0, 0.19);
+}
+
+#content {
+  margin: 20px 0px;
+  text-align: left;
+  resize: none;
+  border-radius: 2px;
+  border: 1px solid #CCCCCC;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0px 3px 0 rgba(0, 0, 0, 0.19);
+}
+
+.column label {
+  text-align: center;
+  font-family: "Lato";
+  font-size: 20px;
+}
+
+.createbtn {
+  display: flex;
+  border: 0;
+  align-items: right;
+  justify-content: right;
+  margin: 80px 500px;
+  padding: 30px;
+  text-align: center;
+  border: 1px soild #f1f1f1;
+  outline: none;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+
+/* -------- COMMENT --------- */
+.comment {
+  display: flex;
+  font-family: Arial;
+  margin-top: 50px;
+  margin-left: 90px;
+  margin-right:150px;
+  justify-content: left;
+  flex-flow: column wrap;
+  width: 90%;
+  border-left: 2px solid #1d4b62;
+  background-color: #ebebeb;
+  padding:5px 10px;
+}
+
+.comment-text {
+  display: flex;
+  font-family: Arial;
+  margin-top: 200px;
+  margin-left: 80px;
+  margin-right: 100px;
+  justify-content: left;
+  flex-flow: column wrap;
+  width: 100%;
+}
+
+.comment-text input[type="text"] {
+  border: 0;
+  background: none;
+  text-align: left;
+  border: 1px solid #222;
+  color: black;
+  border-radius: 8px;
+  margin: 0px 20px;
+}
+
+.comment-text input[type="submit"] {
+  border: 0;
+  justify-content: left;
+  width: 100px;
+  margin: 0px 20px;
+}
+
+
+/* -------- LOGIN / REGISTER --------- */
+.box {
+  display: flex;
+  width: 300px;
+  padding: 70px;
+  position: relative;
+  left: 50%;
+  top: 330px;
+  transform:translate(-50%,-50%);
+}
+
+.box h1{
+  text-align: center;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+
+.box input[type="text"],.box input[type="password"]{
+  border: 0;
+  background: none;
+  margin: 20px auto;
+  text-align: left;
+  border-bottom: 1px solid #222;
+  padding: 14px 10px;
+  color: black;
+  border-radius: 5px;
+}
+
+.box input[type="submit"]{
+  border: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 40px auto;
+  text-align: center;
+  border: 1px soild #f1f1f1;
+  padding: 14px 20px;
+  outline: none;
+  color: white;
+  border-radius: 2px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+#login_btn {
+  background: #317FA5
+}
+
+#register_btn {
+  background: #1ebd48;
+}
+
+.box input[type="submit"]:hover {
+  background-color: #2ecc71;
+}
+
+.box input[type="text"]:focus, .box input[type="password"]:focus{
+  border-color: #2ecc71;
+}
+
+#login-error-msg {
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #8a0000;
+  border: 1px solid #8a0000;
+  background-color: #e58f8f;
+  opacity: 0;
+}
+
+#error-msg-second-line {
+  display: block;
+}
+
+/* forged from https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css */
+.help-block {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #737373;
+}
+
+/* -------- FOOTER --------- */
+footer {
+  background-color: #555;
+  color: #bbb;
+  line-height: 1.5;
+}
+
+footer a {
+  text-decoration: none;
+  color: #eee;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #d9d9d9;
+}
+
+.ft-title {
+  color: #fff;
+  font-family: Arial, serif;
+  font-size: 1.375rem;
+  padding-bottom: 0.625rem;
+}
+
+/* Sticks footer to bottom */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Footer main */
+.ft-main {
+  padding: 1.25rem 1.875rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ft-main-item {
+  padding: 1.25rem;
+  min-width: 12.5rem;
+}
+
+
+/* Footer main | Newsletter form */
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+input[type="email"] {
+  border: none;
+  align-content: center;
+  padding: 0.625rem;
+  margin-top: 0.3125rem;
+  border-left: 0.3125rem;
+  background-color: grey;
+  color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type="submit"] {
+  background-color: #317FA5;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  padding: 0.625rem 1rem;
+  margin-top: 0.3125rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type="submit"]:hover {
+  background-color: #3b96c4;
+}
+
+/* Footer social */
+.ft-social {
+  padding: 0 1.875rem 1.25rem;
+}
+
+.ft-social-list {
+  display: flex;
+  justify-content: center;
+  border-top: 1px #777 solid;
+  padding-top: 1.25rem;
+}
+
+.ft-social-list li {
+  margin: 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* Footer legal */
+.ft-legal {
+  padding: 0.9375rem 1.875rem;
+  background-color: #333;
+}
+
+.ft-legal-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ft-legal-list li {
+  margin: 0.125rem 0.625rem;
+  white-space: nowrap;
+}
+
+/* one before the last child */
+.ft-legal-list li:nth-last-child(2) {
+    flex: 1;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn, .recents {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .sign-in-bar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 29.8125rem /* 477px */) {
+  .ft-main {
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (min-width: 77.5rem /* 1240px */) {
+  .ft-main {
+    justify-content: space-evenly;
+  }
+}
